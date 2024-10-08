@@ -35,8 +35,12 @@ This project is an e-commerce platform that offers a wide range of products incl
 3. Set up environment variables
    Create a `.env` file in the root directory and add the following:
    ```
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret
+   PORT=8080
+   DATABASE=your_mongodb_connection_string
+   JWT_SECRET_key=your_jwt_secret
+   STRIPE_API_KEY=you_stripe_API_Key
+   ENDPOINT_SECRET=yor_endpoint_secret_key
+   SESSION_KEY=your_session_key
    ```
 
 4. Start the development server
