@@ -27,9 +27,8 @@ This project is an e-commerce platform that offers a wide range of products incl
 2. Install dependencies for both frontend and backend
    ```
    cd ecommerce-platform
-   npm install
    cd client
-   npm install
+   npm run install-all
    ```
 
 3. Set up environment variables
