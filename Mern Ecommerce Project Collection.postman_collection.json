@@ -1,0 +1,745 @@
+{
+	"info": {
+		"_postman_id": "f18ba832-7d75-48e1-8ecc-f8821b6ee0f8",
+		"name": "Mern Ecommerce Project Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38672808"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "signup-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test.user@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Test@123",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/afaja/Pictures/drdr.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup-admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test.admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Test@123",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/afaja/Pictures/av.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "profilePicture",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test.user@gmail.com\",\r\n  \"password\" : \"Test@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check auth user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"afzal admin\",\r\n    \"email\":\"afzal.admin@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/6704f8635c5085bd89e821d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"6704f8635c5085bd89e821d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/67038834abf8736734694dec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"67038834abf8736734694dec"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Vivo V30 Pro\",\r\n    \"description\": \"Released 2024, March 07\\n188g, 7.5mm thickness\\nAndroid 14, up to 2 major upgrades\\n256GB/512GB storage, no card slot\",\r\n    \"brand\": \"vivo\",\r\n    \"colors\": [\r\n        {\r\n            \"name\": \"White\",\r\n            \"class\": \"bg-white\",\r\n            \"selectedClass\": \"ring-gray-400\",\r\n            \"id\": \"white\"\r\n        },\r\n        {\r\n            \"name\": \"Gray\",\r\n            \"class\": \"bg-gray-200\",\r\n            \"selectedClass\": \"ring-gray-400\",\r\n            \"id\": \"gray\"\r\n        }\r\n    ],\r\n    \"sizes\": [\r\n        {\r\n            \"name\": \"6.7 inches\",\r\n            \"inStock\": true,\r\n            \"id\": \"6.7\"\r\n        }\r\n    ],\r\n    \"category\": \"mobile\",\r\n    \"price\": 45000,\r\n    \"discountPercentage\": 1,\r\n    \"stock\": 5,\r\n    \"thumbnail\": \"https://fdn2.gsmarena.com/vv/bigpic/vivo-v30-pro.jpg\",\r\n    \"highlight1\": \"144Hz display\",\r\n    \"highlight2\": \"Billion-color display\",\r\n    \"highlight3\": \"Ready For PC connection\",\r\n    \"highlight4\": \"Flahship\",\r\n    \"images\": [\r\n        \"https://fdn2.gsmarena.com/vv/pics/vivo/vivo-v30-pro-2.jpg\",\r\n        \"https://fdn2.gsmarena.com/vv/pics/vivo/vivo-v30-pro-1.jpg\",\r\n        \"https://fdn2.gsmarena.com/vv/pics/vivo/vivo-v30-pro-10.jpg\",\r\n        \"https://fdn2.gsmarena.com/vv/bigpic/vivo-v30-pro.jpg\"\r\n    ],\r\n    \"highlights\": [\r\n        \"144Hz display\",\r\n        \"Billion-color display\",\r\n        \"Ready For PC connection\",\r\n        \"Flahship\"\r\n    ],\r\n    \"rating\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products?_page=1&_limit=10&",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "_page",
+									"value": "1"
+								},
+								{
+									"key": "_limit",
+									"value": "10"
+								},
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/6704fcc15c5085bd89e82279",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"6704fcc15c5085bd89e82279"
+							],
+							"query": [
+								{
+									"key": "_page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "_limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product by Id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"title\": \"ViVO V30 PRO \",\r\n    \"rating\": 1,\r\n    \"stock\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/products/6704fcc15c5085bd89e82279",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"6704fcc15c5085bd89e82279"
+							],
+							"query": [
+								{
+									"key": "_page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "_limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products/6704fd4d1828ffd7e50bc5f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"6704fd4d1828ffd7e50bc5f4"
+							],
+							"query": [
+								{
+									"key": "_page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "_limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // product id and quntity\r\n    \"product\": \"6704fcc15c5085bd89e82279\",\r\n     \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Cart Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart by Id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"6704fcc15c5085bd89e82279\",\r\n     \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cart/6704fe435c5085bd89e822a5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"6704fe435c5085bd89e822a5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"67038c13a26e1ec7a1fb2731\",\r\n     \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cart/6704fe435c5085bd89e822a5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"6704fe435c5085bd89e822a5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"quantity\": 1,\r\n            \"product\": {\r\n                \"title\": \"ViVO V30 PRO \",\r\n                \"description\": \"Released 2024, March 07\\n188g, 7.5mm thickness\\nAndroid 14, up to 2 major upgrades\\n256GB/512GB storage, no card slot\",\r\n                \"price\": 45000,\r\n                \"discountPercentage\": 1,\r\n                \"rating\": 1,\r\n                \"stock\": 5,\r\n                \"brand\": \"vivo\",\r\n                \"category\": \"mobile\",\r\n                \"thumbnail\": \"https://fdn2.gsmarena.com/vv/bigpic/vivo-v30-pro.jpg\",\r\n                \"images\": [\r\n                    \"https://fdn2.gsmarena.com/vv/pics/vivo/vivo-v30-pro-2.jpg\",\r\n                    \"https://fdn2.gsmarena.com/vv/pics/vivo/vivo-v30-pro-1.jpg\",\r\n                    \"https://fdn2.gsmarena.com/vv/pics/vivo/vivo-v30-pro-10.jpg\",\r\n                    \"https://fdn2.gsmarena.com/vv/bigpic/vivo-v30-pro.jpg\"\r\n                ],\r\n                \"colors\": [\r\n                    {\r\n                        \"name\": \"White\",\r\n                        \"class\": \"bg-white\",\r\n                        \"selectedClass\": \"ring-gray-400\",\r\n                        \"id\": \"white\"\r\n                    },\r\n                    {\r\n                        \"name\": \"Gray\",\r\n                        \"class\": \"bg-gray-200\",\r\n                        \"selectedClass\": \"ring-gray-400\",\r\n                        \"id\": \"gray\"\r\n                    }\r\n                ],\r\n                \"sizes\": [\r\n                    {\r\n                        \"name\": \"6.7 inches\",\r\n                        \"inStock\": true,\r\n                        \"id\": \"6.7\"\r\n                    }\r\n                ],\r\n                \"highlights\": [\r\n                    \"144Hz display\",\r\n                    \"Billion-color display\",\r\n                    \"Ready For PC connection\",\r\n                    \"Flahship\"\r\n                ],\r\n                \"deleted\": false,\r\n                \"discountPrice\": 44550,\r\n                \"id\": \"6704fcc15c5085bd89e82279\"\r\n            },\r\n            \"user\": \"6704f8635c5085bd89e821d3\",\r\n            \"id\": \"670501625c5085bd89e8235b\"\r\n        }\r\n    ],\r\n    \"totalAmount\": 44550,\r\n    \"totalItems\": 1,\r\n    \"user\": \"6704f8635c5085bd89e821d3\",\r\n    \"paymentMethod\": \"cash\",\r\n    \"selectedAddress\": {\r\n        \"name\": \"safwa infotech projects\",\r\n        \"email\": \"afzal.admin@gmail.com\",\r\n        \"phone\": \"9409406062\",\r\n        \"street\": \"BASERA Apartment 033\",\r\n        \"city\": \"sarkhej\",\r\n        \"state\": \"gujarat\",\r\n        \"pinCode\": \"380025\"\r\n    },\r\n    \"status\": \"pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/670501d05c5085bd89e823be",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"670501d05c5085bd89e823be"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brand",
+			"item": [
+				{
+					"name": "add new category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"label\": \"Vivo\",\r\n    \"value\": \"vivo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Brands",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"label\": \"Vivo\",\r\n    \"value\": \"vivo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"brands"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "add new category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"label\": \"Others\",\r\n    \"value\": \"others\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"label\": \"Vivo\",\r\n    \"value\": \"vivo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
